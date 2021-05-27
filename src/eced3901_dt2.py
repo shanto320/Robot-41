@@ -104,19 +104,19 @@ class TriangleMoveVel(TriangleMove):
         # duration, speed format so for next line 2 is duration and 0.5 is speed
 	# all roation until 180 degree is counter clockwise
 	# forward speed = 0.15 m/s and angspeed = 1 rad/s
-	self.go_forward(0.3, 0.5) # set the value in such a way that it goes 0.5 m forward
+	self.go_forward(2, 0.5) # set the value in such a way that it goes 0.5 m forward
         self.turn(3.5, 0.5) # set the value for 45 degree rotation  
-        self.go_forward(2, 0.5) # set the value for 0.71m forward
-        self.turn(3.5, 0.5) # set the value for 45 degree rotation
-        self.go_forward(2, 0.5) # set the value for 0.5m forward
-	# completes triangle counter clockwise
-	self.turn(3.5, 0.5) # turn 180 degree
+        # self.go_forward(2, 0.5) # set the value for 0.71m forward
+        # self.turn(3.5, 0.5) # set the value for 45 degree rotation
+        # self.go_forward(2, 0.5) # set the value for 0.5m forward
+	# completes triangle counter clockwise#
+	#self.turn(3.5, 0.5) # turn 180 degree
 	# All rotation now should be clockwise for retracing
-	self.go_forward(2, 0.5) # set the value for 0.5m forward
-	self.turn(3.5, 0.5) # turn 45 degree
-	self.go_forward(2, 0.5) # set the value for 0.71m forward
-	self.turn(3.5, 0.5) # turn 45 degrees
-	self.go_forward(2, 0.5) # set the value for 0.5m forward  
+	#self.go_forward(2, 0.5) # set the value for 0.5m forward
+	#self.turn(3.5, 0.5) # turn 45 degree
+	#self.go_forward(2, 0.5) # set the value for 0.71m forward
+	#self.turn(3.5, 0.5) # turn 45 degrees
+	#self.go_forward(2, 0.5) # set the value for 0.5m forward  
         # robot should be at origin now
 	self.stop_robot() # move process stopped
 	
