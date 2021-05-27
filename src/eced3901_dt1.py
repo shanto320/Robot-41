@@ -209,14 +209,14 @@ class SquareMoveOdom(SquareMove):
             time.sleep(0.1)
 
         # Implement main instructions
-        # self.move_of(0.5)
-        self.turn_of(math.pi/4)
         self.move_of(0.5)
-        self.turn_of(math.pi/4)
-        self.move_of(0.5)
-        self.turn_of(math.pi/4)
-        self.move_of(0.5)
-        self.stop_robot()
+       # self.turn_of(math.pi/4)
+       # self.move_of(0.5)
+       # self.turn_of(math.pi/4)
+       # self.move_of(0.5)
+       # self.turn_of(math.pi/4)
+       # self.move_of(0.5)
+       # self.stop_robot()
 
 
 
