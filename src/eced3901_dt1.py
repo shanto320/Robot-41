@@ -115,7 +115,7 @@ class SquareMoveVel(SquareMove):
 
     def move(self):
 
-        self.go_forward(2, 0.5)
+        self.go_forward(2, 0.5)         #movement will depend on code in Odom
         self.turn(3.5, 0.5)
         self.go_forward(2, 0.5)
         self.turn(3.5, 0.5)
@@ -202,19 +202,19 @@ class SquareMoveOdom(SquareMove):
             time.sleep(0.1)
 
         # Implement main instructions
-        self.move_of(0.5,0.1)
-        self.turn_of(131,0.3)
+        self.move_of(0.5,0.1)           # 0.1 m/s speed forward motion with a 0.5 duration
+        self.turn_of(133,0.3)           #0.3 angular velocity with an orientation of 133 degrees
         self.move_of(0.72,0.1)
         self.turn_of(-95,0.3)
         self.move_of(0.5,0.1)
-        self.turn_of(95,0.3)
+        self.turn_of(85,0.3)
         self.move_of(0.5)
 	self.turn_of(-48,-0.3)
 	self.move_of(0.72,0.1)
         self.turn_of(179,-0.3)
 	self.move_of(0.5)
         self.turn_of(-1,-0.3)
-	self.stop_robot()
+	self.stop_robot()              #Stop movement
 
 
 
