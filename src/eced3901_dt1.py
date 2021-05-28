@@ -7,8 +7,7 @@ from geometry_msgs.msg import Twist, Pose
 from nav_msgs.msg import Odometry
 from tf.transformations import euler_from_quaternion, quaternion_from_euler
 
-
-__author__ = "Gabriel Urbain" 
+__team#__ = "Team41" 
 __copyright__ = "Copyright 2018, IDLab, UGent"
 
 __license__ = "MIT" 
@@ -156,10 +155,11 @@ class SquareMoveOdom(SquareMove):
     def get_z_rotation(self, orientation):
 
         (roll, pitch, yaw) = euler_from_quaternion([orientation.x, orientation.y, orientation.z, orientation.w])
-        print roll, pitch, yaw
+        yaw = (yaw*180)/math.pi
+#	print yaw
         return yaw
         
-    def move_of(self, d, speed=0.5):
+    def move_of(self, d, speed=0.15):
 
         x_init = self.odom_pose.position.x
         y_init = self.odom_pose.position.y
@@ -168,9 +168,9 @@ class SquareMoveOdom(SquareMove):
         while math.sqrt((self.odom_pose.position.x - x_init)**2 + \
              (self.odom_pose.position.y - y_init)**2) < d and not ros.is_shutdown():
 
-            sys.stdout.write("\r [MOVE] The robot has moved of {:.2f}".format(math.sqrt((self.odom_pose.position.x - x_init)**2 + \
-            (self.odom_pose.position.y - y_init)**2)) +  "m over " + str(d) + "m")
-            sys.stdout.flush()
+           # sys.stdout.write("\r [MOVE] The robot has moved of {:.2f}".format(math.sqrt((self.odom_pose.position.x - x_init)**2 + \
+           # (self.odom_pose.position.y - y_init)**2)) +  "m over " + str(d) + "m")
+           # sys.stdout.flush()
 
             msg = Twist()
             msg.linear.x = speed
@@ -180,15 +180,18 @@ class SquareMoveOdom(SquareMove):
 
         sys.stdout.write("\n")
 
-    def turn_of(self, a, ang_speed=0.4):
+    def turn_of(self, a, ang_speed=0.2):
 
         # Convert the orientation quaternion message to Euler angles
-        a_init = self.get_z_rotation(self.odom_pose.orientation)
-        print a_init
+        # a_init = self.get_z_rotation(self.odom_pose.orientation)
+        # print a_init, a
 
         # Set the angular velocity forward until angle is reached
-        while (self.get_z_rotation(self.odom_pose.orientation) - a_init) < a and not ros.is_shutdown():
-
+	while(not ros.is_shutdown()):
+	    if(a-1 <= self.get_z_rotation(self.odom_pose.orientation) <= a+1):
+	 	break
+       	    # while (self.get_z_rotation(self.odom_pose.orientation) - a_init) < a and not ros.is_shutdown():
+            # print self.get_z_rotation(self.odom_pose.orientation), a_init, a
             # sys.stdout.write("\r [TURN] The robot has turned of {:.2f}".format(self.get_z_rotation(self.odom_pose.orientation) - \
             #     a_init) + "rad over {:.2f}".format(a) + "rad")
             # sys.stdout.flush()
@@ -200,7 +203,7 @@ class SquareMoveOdom(SquareMove):
             self.vel_ros_pub(msg)
             time.sleep(self.pub_rate)
 
-        sys.stdout.write("\n")
+        # sys.stdout.write("\n")
 
     def move(self):
 
@@ -209,14 +212,19 @@ class SquareMoveOdom(SquareMove):
             time.sleep(0.1)
 
         # Implement main instructions
+        self.move_of(0.5,0.1)
+        self.turn_of(131,0.3)
+        self.move_of(0.72,0.1)
+        self.turn_of(-95,0.3)
+        self.move_of(0.5,0.1)
+        self.turn_of(95,0.3)
         self.move_of(0.5)
-       # self.turn_of(math.pi/4)
-       # self.move_of(0.5)
-       # self.turn_of(math.pi/4)
-       # self.move_of(0.5)
-       # self.turn_of(math.pi/4)
-       # self.move_of(0.5)
-       # self.stop_robot()
+	self.turn_of(-48,-0.3)
+	self.move_of(0.72,0.1)
+        self.turn_of(179,-0.3)
+	self.move_of(0.5)
+        self.turn_of(-1,-0.3)
+	self.stop_robot()
 
 
 
@@ -241,8 +249,3 @@ if __name__ == '__main__':
     # Listen and Publish to ROS + execute moving instruction
     r.start_ros()
     r.move()
-
-
-
-
-
