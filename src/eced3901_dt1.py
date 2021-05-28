@@ -7,16 +7,6 @@ from geometry_msgs.msg import Twist, Pose
 from nav_msgs.msg import Odometry
 from tf.transformations import euler_from_quaternion, quaternion_from_euler
 
-__team#__ = "Team41" 
-__copyright__ = "Copyright 2018, IDLab, UGent"
-
-__license__ = "MIT" 
-__version__ = "1.0" 
-__maintainer__ = "Gabriel Urbain"
-__email__ = "gabriel.urbain@ugent.be" 
-__status__ = "Education" 
-__date__ = "October 15th, 2018"
-
 
 class SquareMove(object):
     """
@@ -188,7 +178,7 @@ class SquareMoveOdom(SquareMove):
 
         # Set the angular velocity forward until angle is reached
 	while(not ros.is_shutdown()):
-	    if(a-1 <= self.get_z_rotation(self.odom_pose.orientation) <= a+1):
+	    if(a-1.5 <= self.get_z_rotation(self.odom_pose.orientation) <= a+1.5):
 	 	break
        	    # while (self.get_z_rotation(self.odom_pose.orientation) - a_init) < a and not ros.is_shutdown():
             # print self.get_z_rotation(self.odom_pose.orientation), a_init, a
