@@ -7,6 +7,8 @@ from geometry_msgs.msg import Twist, Pose
 from nav_msgs.msg import Odometry
 from tf.transformations import euler_from_quaternion, quaternion_from_euler
 
+# Team 41
+# Author: Naim, Shanto, Taylor-Anne
 
 class SquareMove(object):
     """
@@ -203,12 +205,12 @@ class SquareMoveOdom(SquareMove):
 
         # Implement main instructions
         self.move_of(0.5,0.1)           # 0.1 m/s speed forward motion with a 0.5 duration
-        self.turn_of(133,0.3)           #0.3 angular velocity with an orientation of 133 degrees
+        self.turn_of(134,0.3)           #0.3 angular velocity with an orientation of 133 degrees
         self.move_of(0.72,0.1)
         self.turn_of(-95,0.3)
         self.move_of(0.5,0.1)
-        self.turn_of(85,0.3)
-        self.move_of(0.5,0.1)
+        self.turn_of(87,0.3)
+        self.move_of(0.5,0.1)          #Start of the second traversal 
 	self.turn_of(-46.5,-0.3)
 	self.move_of(0.72,0.1)
         self.turn_of(179,-0.3)
