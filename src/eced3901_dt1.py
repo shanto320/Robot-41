@@ -208,11 +208,11 @@ class SquareMoveOdom(SquareMove):
         self.turn_of(-95,0.3)
         self.move_of(0.5,0.1)
         self.turn_of(85,0.3)
-        self.move_of(0.5)
-	self.turn_of(-48,-0.3)
+        self.move_of(0.5,0.1)
+	self.turn_of(-46.5,-0.3)
 	self.move_of(0.72,0.1)
         self.turn_of(179,-0.3)
-	self.move_of(0.5)
+	self.move_of(0.5,0.1)
         self.turn_of(-1,-0.3)
 	self.stop_robot()              #Stop movement
 
