@@ -207,9 +207,9 @@ class SquareMoveOdom(SquareMove):
 
         # Implement main instructions
         self.move_of(1.1,0.08)
-	self.turn_of(87.5,0.25)
+	self.turn_of(88.5,0.25)
 	self.move_of(1.1,0.08)
-	self.turn_of(177.5,0.25)
+	self.turn_of(178.5,0.25)
 	self.move_of(1.1,0.08)
 	self.turn_of(-88.5,0.25)
 	self.move_of(1.115,0.08)
