@@ -208,7 +208,7 @@ class SquareMoveOdom(SquareMove):
         # Implement main instructions
         self.move_of(1.1,0.08)          #Start movement
 	self.turn_of(88.5,0.25)         #robot turns 90deg
-	self.move_of(1.1,0.08)
+	self.move_of(1.1,0.08)           #Forward movement of 1.1 m
 	self.turn_of(178.5,0.25)        #robot turns 90deg
 	self.move_of(1.1,0.08)
 	self.turn_of(-88.5,0.25)        #robot turns 90deg
