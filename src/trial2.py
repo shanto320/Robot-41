@@ -120,13 +120,13 @@ class SquareMoveVel(SquareMove):
     def move(self):
 
         self.go_forward(2, 0.5)         #movement will depend on code in Odom
-        self.turn(3.5, 0.5)
+        self.turn(3.5, 0.5)             #robot turns 90deg
         self.go_forward(2, 0.5)
-        self.turn(3.5, 0.5)
+        self.turn(3.5, 0.5)            #robot turns 90deg
         self.go_forward(2, 0.5)
-        self.turn(3.5, 0.5)
+        self.turn(3.5, 0.5)            #robot turns 90deg
         self.go_forward(2, 0.5)
-        self.stop_robot()
+        self.stop_robot()              #robot will stop at the origin
 
 
 class SquareMoveOdom(SquareMove):
@@ -207,14 +207,14 @@ class SquareMoveOdom(SquareMove):
 
         # Implement main instructions
         self.move_of(1.1,0.08)          #Start movement
-	self.turn_of(88.5,0.25)
+	self.turn_of(88.5,0.25)         #robot turns 90deg
 	self.move_of(1.1,0.08)
-	self.turn_of(178.5,0.25)
+	self.turn_of(178.5,0.25)        #robot turns 90deg
 	self.move_of(1.1,0.08)
-	self.turn_of(-88.5,0.25)
+	self.turn_of(-88.5,0.25)        #robot turns 90deg
 	self.move_of(1.115,0.08)
-	self.turn_of(-3,0.25)
-	self.stop_robot()              #Stop movement
+	self.turn_of(-3,0.25)          #robot turns 90deg
+	self.stop_robot()              #robot stops at the origin
 
 
 
