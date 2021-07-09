@@ -7,8 +7,7 @@ project(eced3901_2021_team41)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-add_executable(eced3901_2021_team41 src/simple_navigation_goals.cpp)
-target_link_libraries(eced3901_2021_team41 ${catkin_LIBRARIES})
+
 find_package(catkin REQUIRED COMPONENTS
   move_base_msgs
   roscpp
