@@ -11,7 +11,7 @@
 
 	<arg name="delay" default="15.0" /> 
 
-	<arg name="delay1" default="130.0" /> 
+	<arg name="delay1" default="700.0" /> 
 
 
 
