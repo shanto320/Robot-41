@@ -206,18 +206,42 @@ class SquareMoveOdom(SquareMove):
             time.sleep(0.1)
 
         # Implement main instructions
-        self.move_of(1.1,0.08)          #Start movement
-	self.turn_of(88.5,0.25)         #robot turns 90deg
-	self.move_of(1.1,0.08)           #Forward movement of 1.1 m
-	self.turn_of(178.5,0.25)        #robot turns 90deg
-	self.move_of(1.1,0.08)
-	self.turn_of(-88.5,0.25)        #robot turns 90deg
-	self.move_of(1.115,0.08)
-	self.turn_of(-3,0.25)          #robot turns 90deg
-	self.stop_robot()              #robot stops at the origin
-
-
-
+        self.move_of(1.88,0.08)          #Start movement
+	self.turn_of(89.5,0.25)         #robot turns 90deg
+	self.move_of(1.00,0.08)
+	self.turn_of(179.5,0.25)
+	self.move_of(1.85,0.08)
+	self.turn_of(89.5,0.25)
+	self.move_of(2.63,0.08)
+	self.turn_of(0.8,0.25)
+	self.move_of(3.08,0.08)
+	self.turn_of(-89.5,0.25)
+	self.move_of(2.36,0.08)
+	self.turn_of(89.5,0.25)
+	self.move_of(2.36,0.08)
+	self.turn_of(179.5,0.25)
+	self.move_of(3.08,0.08)
+	self.turn_of(-89.55,0.25)
+	self.move_of(1.05,0.08)
+	self.turn_of(0.5,0.25)
+	self.move_of(1.29,0.08)
+	self.turn_of(-89.5,0.25)
+	self.move_of(0.70,0.08)
+	self.turn_of(0.5,0.25)
+	self.move_of(0.70,0.08)
+	self.turn_of(89.5,0.25)
+	self.move_of(0.70,0.08)
+	self.turn_of(0.5,0.25)
+	self.move_of(0.62,0.08)
+	self.turn_of(-89.5,0.25)
+	self.move_of(1.86,0.08)
+	self.turn_of(0.5,0.25)
+	self.move_of(1.28,0.08)
+	self.turn_of(89.5,0.25)
+	self.move_of(2.45,0.08)
+	self.turn_of(-89.5,0.25)
+	self.move_of(3.07,0.08)
+	self.turn_of(0.5,0.25)
 
 if __name__ == '__main__':
 

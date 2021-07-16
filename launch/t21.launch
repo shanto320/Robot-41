@@ -11,7 +11,7 @@
 
 	<arg name="delay" default="15.0" /> 
 
-	<arg name="delay1" default="160.0" /> 
+	<arg name="delay1" default="130.0" /> 
 
 
 
@@ -55,7 +55,7 @@
 
 	<node name="openmenot" pkg="eced3901_2021_team41" type="trial2.py" args="$(arg argcv)" launch-prefix="bash -c 'sleep $(arg delay); $0 $@' " output="screen"/>
 
-	<node name="savemymap" pkg="map_server" type="map_saver" args=" -f $(find eced3901_2021_team41)/maps/T21_map"  launch-prefix="bash -c 'sleep $(arg delay1); $0 $@' " output="screen"/>
+	<node name="savemymap" pkg="map_server" type="map_saver" args=" -f $(find eced3901_2021_team41)/maps/T23_map"  launch-prefix="bash -c 'sleep $(arg delay1); $0 $@' " output="screen"/>
 
 </launch>
 

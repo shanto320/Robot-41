@@ -39,7 +39,7 @@ int main(int argc, char** argv){
  	ros::init(argc, argv, "simple_navigation_goals");
 	ros::NodeHandle nh;
 	ros::Publisher chatter_pub = nh.advertise<std_msgs::Int32>("blink", 6);
-	ros::Rate loop_rate(0.6);
+	ros::Rate loop_rate(0.5);
  	//tell the action client that we want to spin a thread by default
  	MoveBaseClient ac("move_base", true);
  	//wait for the action server to come up
@@ -64,7 +64,7 @@ int main(int argc, char** argv){
 		if(ros::ok()) {
 			loop_rate.sleep();
 			std_msgs:: Int32 msg;
-			msg.data = 10;
+			msg.data = 15;
 			ROS_INFO("%d", msg.data);
 			chatter_pub.publish(msg);
 			ros::spinOnce();
